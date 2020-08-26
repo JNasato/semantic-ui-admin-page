@@ -1,0 +1,9 @@
+{
+  "name": "practice_project",
+  "version": "1.0.0",
+  "main": "login.html",
+  "license": "MIT",
+  "dependencies": {
+    "semantic-ui": "^2.4.2"
+  }
+}

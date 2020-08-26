@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic UI Practice</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+  <div class="ui four column divided very relaxed centered grid" style="margin: 10px 0">
+    <div class="teal row">
+      <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vestibulum, magna sed bibendum cursus, elit
+          justo convallis tortor, at vehicula lorem velit in massa. Maecenas.</p>
+      </div>
+      <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempus elementum erat non semper. Donec
+          ultricies cursus vehicula. Vestibulum est metus, fermentum non consectetur in.</p>
+      </div>
+      <div class="column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mi quam. Phasellus auctor sit amet ex nec
+          porttitor. Class aptent taciti sociosqu ad litora.</p>
+      </div>
+    </div>
+    <div class="red row">
+      <div class="center aligned column">
+        <div class="ui animated button" tabindex="0">
+          <div class="visible content">Next</div>
+          <div class="hidden content">
+            <i class="right arrow icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="center aligned column">
+        <div class="ui vertical animated button" tabindex="0">
+          <div class="hidden content">Shop</div>
+          <div class="visible content">
+            <i class="shop icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="center aligned column">
+        <div class="ui right labeled input" style="margin-bottom: 20px">
+          <input type="text" placeholder="Search" id="input-text">
+          <div class="ui dropdown label">
+            <div class="text">.com</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item">.com</div>
+              <div class="item">.net</div>
+              <div class="item">.org</div>
+            </div>
+          </div>
+        </div>
+        <div class="ui animated fade button" tabindex="0" onClick="pressButton()">
+          <div class="visible content">Display Text</div>
+          <div class="hidden content">
+            GO GO GO
+          </div>
+        </div>
+      </div>
+      <div class="center aligned column" id="output-text" style="font-weight: bolder; font-size: x-large;">INNER HTML
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function pressButton() {
+      const input = document.getElementById('input-text').value;
+      document.getElementById('output-text').innerHTML = input;
+    }
+  </script>
+
+</body>
+
+</html>

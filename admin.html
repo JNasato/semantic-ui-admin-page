@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+  <style type="text/css">
+    #topHeader {
+      height: 10%;
+      padding: 25px;
+    }
+
+    #mainGrid {
+      padding: 25px;
+    }
+
+    #mainGrid>.column {
+      padding: 0px 40px;
+    }
+
+    #personFeed>* {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ui header" id="topHeader">
+    <i class="user secret icon"></i>
+    Welcome to the Admin Page
+  </h1>
+
+  <div class="ui three column grid" id="mainGrid">
+
+    <div class="column">
+      <h2 class="ui header">Orders</h2>
+      <br>
+      <div class="ui fluid vertical menu">
+        <a class="active blue item">
+          Orders
+          <div class="ui blue left pointing label">25</div>
+        </a>
+        <a class="item">
+          Messages
+          <div class="ui label">10</div>
+        </a>
+        <a class="item">
+          Memos
+          <div class="ui label">7</div>
+        </a>
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input type="text" placeholder="Search mail...">
+            <i class="search icon"></i>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="ui top attached tabular menu">
+        <a class="active item">
+          Received
+        </a>
+        <a class="item">
+          Processed
+        </a>
+      </div>
+      <div class="ui bottom attached segment">
+        <div class="ui relaxed divided list">
+          <div class="item">
+            <i class="large envelope icon"></i>
+            <div class="content">
+              <a class="header">Order 1</a>
+              <div class="description">10 mins ago</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="large envelope icon"></i>
+            <div class="content">
+              <a class="header">Order 2</a>
+              <div class="description">22 mins ago</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="large envelope icon"></i>
+            <div class="content">
+              <a class="header">Order 3</a>
+              <div class="description">29 mins ago</div>
+            </div>
+          </div>
+          <div class="item">
+            <i class="large envelope icon"></i>
+            <div class="content">
+              <a class="header">Order 4</a>
+              <div class="description">34 mins ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2 class="ui header">Customers</h2>
+      <br>
+      <div class="ui fluid card">
+        <div class="ui fluid image">
+          <img src="./images/avatar1.jpeg" class="ui image visible content">
+          <div class="ui blue ribbon label">Top Customer!</div>
+        </div>
+        <div class="content">
+          <a class="header">Jeremy</a>
+          <div class="meta">
+            <span class="date">Created in Sep 2014</span>
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="paper plane icon"></i>
+            22 orders
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="ui feed" id="personFeed">
+        <div class="event">
+          <div class="label">
+            <i class="pencil icon"></i>
+          </div>
+          <div class="content">
+            <div class="summary">
+              You posted on your friend <a>Stevie Feliciano's</a> wall.
+              <div class="date">Today</div>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="label">
+            <img class="ui avatar image" src="./images/avatar1.jpeg">
+          </div>
+          <div class="content">
+            <div class="summary">
+              You added <a>Jenny Hess</a> to your <a>coworker</a> group.
+              <div class="date">
+                3 days ago
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="label">
+            <img class="ui avatar image" src="./images/avatar2.png">
+          </div>
+          <div class="content">
+            <div class="summary">
+              Nasato created the group <a>Coworkers</a>
+              <div class="date">
+                7 days ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2 class="ui header">Items</h2>
+      <br>
+      <div class="ui fluid selection dropdown">
+        <input type="hidden" name="category">
+        <i class="dropdown icon"></i>
+        <div class="default text">Category</div>
+        <div class="menu">
+          <div class="item" data-value="0">All</div>
+          <div class="item" data-value="1">Toys</div>
+          <div class="item" data-value="2">Electronics</div>
+          <div class="item" data-value="3">Business</div>
+          <div class="item" data-value="4">Furniture</div>
+          <div class="item" data-value="5">Clothes</div>
+          <div class="item" data-value="5">Outdoors</div>
+        </div>
+      </div>
+      <br>
+      <div class="ui red raised segment">Item 1</div>
+      <div class="ui orange segment">Item 2</div>
+      <div class="ui yellow segment">Item 3</div>
+      <div class="ui green segment">Item 4</div>
+      <div class="ui teal segment">Item 5 </div>
+      <div class="ui blue segment">Item 6</div>
+      <div class="ui violet segment">Item 7</div>
+      <div class="ui purple segment">Item 8</div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $('.ui.dropdown').dropdown();
+  </script>
+</body>
+
+</html>

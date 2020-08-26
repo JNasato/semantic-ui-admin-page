@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+
+  <style type="text/css">
+    .grid {
+      height: 100%;
+    }
+
+    .column {
+      max-width: 450px;
+      padding: 40px !important;
+      border: 1.5px solid #0E6EB8;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h1 class="ui header">Login to your account</h1>
+
+      <form class="ui large form" action="admin.html">
+        <div class="field">
+          <div class="ui left icon input">
+            <input type="text" name="email" placeholder="Email">
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <input type="password" name="password" placeholder="Password">
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>I agree to the Terms and Conditions</label>
+          </div>
+        </div>
+        <button class="ui fluid right labeled icon blue button">
+          <i class="right arrow icon"></i>
+          Login
+        </button>
+        <br>
+        <button class="ui fluid basic button" type="submit">Forgot Password?</button>
+        <div class="ui error message"></div>
+      </form>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    const emails = ['jeremy.nasato12@gmail.com', 'admin@gmail.com'];
+    const passwords = ['password', 'admin'];
+
+    $.fn.form.settings.rules.isUserValid = () => {
+      const email = $('.ui.form').form('get value', 'email');
+      const password = $('.ui.form').form('get value', 'password');
+
+      for (let i = 0; i < emails.length; i++) {
+        if (email === emails[i] && password === passwords[i]) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    $('.ui.form')
+      .form({
+        fields: {
+          email: {
+            identifier: 'email',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please enter an email'
+              },
+              {
+                type: 'contains[@]',
+                prompt: 'Please enter a valid  email'
+              },
+              {
+                type: 'isUserValid',
+                prompt: 'Invalid email or password'
+              }
+            ]
+          },
+          password: {
+            identifier: 'password',
+            rules: [
+              {
+                type: 'empty',
+                prompt: 'Please enter a password'
+              },
+              {
+                type: 'minLength[6]',
+                prompt: 'Your password must be at least {ruleValue} characters'
+              }
+            ]
+          },
+          terms: {
+            identifier: 'terms',
+            rules: [
+              {
+                type: 'checked',
+                prompt: 'You must agree to the terms and conditions'
+              }
+            ]
+          }
+        }
+      });
+  </script>
+</body>
+
+</html>
